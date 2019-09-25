@@ -13,3 +13,7 @@ Capybara.configure do |config|
   config.app = Mlabs::BlahApi
   config.server_port = 3000
 end
+
+def app
+  Mlabs::BlahApi
+end

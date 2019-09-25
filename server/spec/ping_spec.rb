@@ -1,27 +1,25 @@
 require 'spec_helper'
 
 
-describe Mlabs::BlahApi, :type => :feature do
+describe Mlabs::BlahApi do
 	include Rack::Test::Methods
 
-	def app
-		Mlabs::BlahApi
-  end
   
   context "Routes" do
     it 'server running' do
       get '/'
-      last_response.status.should == 404
+      expect( last_response.status ).to eq 404
     end
 
     it "sucessfully ping" do
       get '/v1/ping'
 
-      last_response.status.should == 200
-
-      visit '/v1/ping'
-
-      expect(page).to have_content 'pong!'
+      expect( last_response.status ).to eq 200
+      expect( 
+        JSON.parse(last_response.body) 
+      ).to eq JSON.parse(
+        '{"message": "pong!"}'
+      )
     end
   end
 end
