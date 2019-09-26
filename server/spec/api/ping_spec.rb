@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe Mlabs::BlahApi do
 	include Rack::Test::Methods
 

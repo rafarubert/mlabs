@@ -1,6 +1,5 @@
 require 'grape'
 
-
 module Mlabs
   class BlahApi < Grape::API
     version 'v1' 
