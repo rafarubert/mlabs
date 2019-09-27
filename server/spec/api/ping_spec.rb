@@ -4,7 +4,7 @@ describe Mlabs::BlahApi do
 	include Rack::Test::Methods
 
   
-  context "Routes" do
+  context "Start application" do
     it 'server running' do
       get '/'
       expect( last_response.status ).to eq 404

@@ -18,8 +18,8 @@ sudo docker-compose up --build
 In other shell run:
 
 ```sh
-sudo docker-compose run -e server bundle exec rake db:create
-sudo docker-compose run -e server bundle exec rake db:migrate
+sudo docker-compose exec server bundle exec rake db:create
+sudo docker-compose exec server bundle exec rake db:migrate
 ```
 
 Visit on browser http://localhost:3000/v1/ping
@@ -28,6 +28,6 @@ Visit on browser http://localhost:3000/v1/ping
 
 ```sh
 sudo docker-compose up
-sudo docker-compose run -e OTR_ENV=test server bundle exec rake db:migrate
-sudo docker-compose run server bundle exec rspec
+sudo docker-compose exec -e OTR_ENV=test server bundle exec rake db:migrate
+sudo docker-compose exec server bundle exec rspec
 ```

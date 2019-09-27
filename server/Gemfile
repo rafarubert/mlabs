@@ -9,6 +9,9 @@ gem 'activerecord', require: 'active_record'
 gem 'otr-activerecord'
 gem 'pg'
 
+gem 'as-duration'
+gem 'dotiw'
+
 gem 'rspec'
 gem 'capybara'
 gem 'shoulda-matchers', require: false
