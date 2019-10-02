@@ -2,14 +2,14 @@
 
 Arroxa
 
-#Links:
+# Links:
 ## Backend
 https://github.com/mlabssoftware/mlabs-teste/blob/master/back-end.md
 
 ## Frontend
 https://github.com/mlabssoftware/mlabs-teste/blob/master/front-end.md
 
-##run:
+## run:
 
 ```sh
 sudo docker-compose up --build
@@ -24,7 +24,7 @@ sudo docker-compose exec server bundle exec rake db:migrate
 
 Visit on browser http://localhost:3000/v1/ping
 
-##run tests:
+## run tests:
 
 ```sh
 sudo docker-compose up
