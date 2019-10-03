@@ -1,0 +1,43 @@
+%section#social_container
+  %div.container
+    %div.social.facebook
+      %img src="/assets/images/facebook.png"
+      %p Facebook
+      %a.btn click={ action "toggleModal" } href="#" Adicionar
+    %div.social.twitter
+      %img src="/assets/images/twitter.png"
+      %p Twitter
+      %a.btn click={ action "toggleModal" } href="#" Adicionar
+    %div.social.instagram
+      %img src="/assets/images/instagram.png"
+      %p Instagram
+      %a.btn click={ action "toggleModal" } href="#" Adicionar
+    %div.social.google_negocio
+      %img src="/assets/images/google_my_business.png"
+      %p Google  meu negócio
+      %a.btn click={ action "toggleModal" } href="#" Adicionar
+    %div.social.pintrest
+      %img src="/assets/images/pinterest.png"
+      %p Pinterest
+      %a.btn click={ action "toggleModal" } href="#" Adicionar
+    %div.social.linkedin
+      %img src="/assets/images/linkedin.png"
+      %p Linkedin
+      %a.btn click={ action "toggleModal" } href="#" Adicionar
+    %div.social.youtube
+      %img src="/assets/images/youtube.png"
+      %p Youtube
+      %a.btn click={ action "toggleModal" } href="#" Adicionar
+    %div.social.whatsapp
+      %img src="/assets/images/whatsapp.png"
+      %p Whatsapp
+      %a.btn click={ action "toggleModal" } href="#" Adicionar
+    %div.social.google_analytics
+      %img src="/assets/images/analytics.png"
+      %p Google Analytics
+      %a.btn click={ action "toggleModal" } href="#" Adicionar
+
+= if isShowingModal
+  = modal-dialog onClose=(action "toggleModal")
+    %h1 Vai
+    %button onclick={action "toggleModal"} fechar

@@ -1,0 +1,56 @@
+%header#header-top
+  %div.container
+    %div.row
+        %div.col-md-4.text-left 23/09/2019 10:19:56
+        %div.col-md-4.text-center Minha conta 
+        %div.col-md-4.text-right
+          = fa-icon 'cog'
+%header#header-main
+  %div.container
+    %div.row
+      %div.col-md-2
+        %h1 Mlabs
+      %div.col-md-10
+        %nav.menu-nav
+          %ul.nav.nav-pills.nav-fill
+            %li.nav-item
+              %a href="#"
+                %div.menu-nav-btn
+                  = fa-icon "dashboard"
+                  %div Dashboard
+            %li.nav-item
+              %a href="#"
+                %div.menu-nav-btn
+                  = fa-icon "dashboard"
+                  %div Agendar Post
+            %li.nav-item
+              %a href="#"
+                %div.menu-nav-btn
+                  = fa-icon "dashboard"
+                  %div Calendário
+            %li.nav-item
+              %a href="#"
+                %div.menu-nav-btn
+                  = fa-icon "plus"
+                  %div Inbox
+            %li.nav-item
+              %a href="#"
+                %div.menu-nav-btn
+                  = fa-icon "calendar"
+                  %div Feed
+            %li.nav-item
+              %a href="#"
+                %div.menu-nav-btn
+                  = fa-icon "inbox"
+                  %div Workflow
+            %li.nav-item
+              %a href="#"
+                %div.menu-nav-btn
+                  = fa-icon "newspaper-o"
+                  %div Acompanhamento
+            %li.nav-item
+              %a href="#"
+                %div.menu-nav-btn
+                  = fa-icon "dashboard"
+                  %div Relatórios
+= outlet
