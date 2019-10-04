@@ -31,3 +31,6 @@ sudo docker-compose up
 sudo docker-compose exec -e OTR_ENV=test server bundle exec rake db:migrate
 sudo docker-compose exec server bundle exec rspec
 ```
+
+## run Front:
+Visit on browser http://localhost:4200

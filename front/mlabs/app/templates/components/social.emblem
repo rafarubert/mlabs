@@ -1,0 +1,5 @@
+%div.social
+  = yield
+  %img src="/assets/images/{{this.image}}.png"
+  %p = this.title
+  %a.btn click={ onClick } href="#" Adicionar

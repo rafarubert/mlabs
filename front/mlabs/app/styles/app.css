@@ -92,3 +92,17 @@ section#social_container div.social a.btn{
   color: #fff;
   font-weight: bold;
 }
+
+.ember-modal-dialog{
+  border-radius: 0;
+  width:40%;
+}
+
+
+img.picture {
+  width: 80px;
+}
+
+.selected_social{
+  margin-top: 20px;
+}

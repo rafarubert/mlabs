@@ -1,43 +1,38 @@
+= if (gt selectedChannels.length 0 )
+  %div.container.selected_social
+    %h2 Selecionados:
+    %ul
+    = each selectedChannels as |channel_connected|
+        %li #{channel_connected.channel}: #{channel_connected.name}
+
 %section#social_container
   %div.container
-    %div.social.facebook
-      %img src="/assets/images/facebook.png"
-      %p Facebook
-      %a.btn click={ action "toggleModal" } href="#" Adicionar
-    %div.social.twitter
-      %img src="/assets/images/twitter.png"
-      %p Twitter
-      %a.btn click={ action "toggleModal" } href="#" Adicionar
-    %div.social.instagram
-      %img src="/assets/images/instagram.png"
-      %p Instagram
-      %a.btn click={ action "toggleModal" } href="#" Adicionar
-    %div.social.google_negocio
-      %img src="/assets/images/google_my_business.png"
-      %p Google  meu negócio
-      %a.btn click={ action "toggleModal" } href="#" Adicionar
-    %div.social.pintrest
-      %img src="/assets/images/pinterest.png"
-      %p Pinterest
-      %a.btn click={ action "toggleModal" } href="#" Adicionar
-    %div.social.linkedin
-      %img src="/assets/images/linkedin.png"
-      %p Linkedin
-      %a.btn click={ action "toggleModal" } href="#" Adicionar
-    %div.social.youtube
-      %img src="/assets/images/youtube.png"
-      %p Youtube
-      %a.btn click={ action "toggleModal" } href="#" Adicionar
-    %div.social.whatsapp
-      %img src="/assets/images/whatsapp.png"
-      %p Whatsapp
-      %a.btn click={ action "toggleModal" } href="#" Adicionar
-    %div.social.google_analytics
-      %img src="/assets/images/analytics.png"
-      %p Google Analytics
-      %a.btn click={ action "toggleModal" } href="#" Adicionar
+    = social title='Facebook' image='facebook' onClick=( action 'openSetup' 'facebook' )
+    = social title='Twitter' image='twitter' onClick=( action 'openSetup' 'twitter')
+    = social title='Instagram' image='instagram' onClick=( action 'openSetup' 'instagram')
+    = social title='Google meu negócio' image='google_my_business' onClick=( action 'openSetup' 'google_my_business' )
+    = social title='Pinterest' image='pinterest' onClick=( action 'openSetup' 'pinterest')
+    = social title='Linkedin' image='linkedin' onClick=( action 'openSetup' 'linkedin')
+    = social title='Youtube' image='youtube' onClick=( action 'openSetup' 'youtube')
+    = social title='Whatsapp' image='whatsapp' onClick=( action 'openSetup' 'whatsapp')
+    = social title='Google Analytics' image='analytics' onClick=( action 'openSetup' 'analytics')
 
 = if isShowingModal
-  = modal-dialog onClose=(action "toggleModal")
-    %h1 Vai
-    %button onclick={action "toggleModal"} fechar
+  = modal-dialog translucentOverlay=true onClose=(action "closeSetup")
+    %h3 Vincular a página do {{channel}}
+    %h5 Selecione a página que você deseja vincular a este perfil
+
+    %form submit={ action "addChannels" }
+
+      = each model as |page|
+        = if (eq page.channel_key channel )
+          %div.row
+            %div.col-md-2
+              %img.picture src="{{page.picture}}"
+            %div.col-md-8 = page.name
+            %div.col-md-2 
+              %input type="radio" name="selectedName" change={ action "clickSelected" page.name }
+
+          %hr
+      %div.text-right
+        %button.btn.btn-success Próximo
